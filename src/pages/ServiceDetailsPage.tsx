@@ -4,15 +4,14 @@ import img2 from "/de2.png"; // Another image for services
 import img3 from "/de3.png"; // Additional image for services
 import img4 from "/img_rectangle_5599.png"; // Agent's image (or service provider's image)
 import { IoStarOutline, IoStarSharp } from "react-icons/io5";
-import { Button, DatePicker, Form, Input, Textarea } from "@heroui/react";
-import { useState } from "react";
+// import { useState } from "react";
 
 export default function ServiceDetailsPage() {
-  const [submitted, setSubmitted] = useState<{
-    [k: string]: FormDataEntryValue;
-  } | null>(null);
+  // const [submitted, setSubmitted] = useState<{
+  //   [k: string]: FormDataEntryValue;
+  // } | null>(null);
 
-  console.log(submitted);
+  // console.log(submitted);
 
   return (
     <DefaultLayout>

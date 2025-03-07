@@ -1,5 +1,4 @@
 import { Button, Card, CardBody, CardFooter, Image, Link } from "@heroui/react";
-import Img from "/img_image_260x384.png"; // Placeholder image (use the image for your services)
 
 // List of teaser-related services
 const servicesList = [

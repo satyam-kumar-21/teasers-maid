@@ -1,7 +1,5 @@
 import DefaultLayout from "@/layouts/default";
-import { Button } from "@heroui/react";
-import { useState } from "react";
-import Img from "/img_image_260x384.png"; // Placeholder image (use the image for your teaser services)
+// import { useState } from "react";
 import { DynamicCard } from "@/components/Services"; // Update this component name to match the correct one
 
 const teaserServices = [
@@ -52,7 +50,6 @@ const teaserServices = [
 
 
 export default function TeaserPage() {
-  const [selectedService, setSelectedService] = useState<string>("");
 
   return (
     <DefaultLayout>

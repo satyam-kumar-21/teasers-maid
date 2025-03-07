@@ -3,10 +3,6 @@ import { useEffect, useRef, useState } from "react";
 import { motion, useAnimation, useInView } from "framer-motion";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import img1 from "/img_rectangle_5592.png";  // You can replace these with relevant teaser images
-import img2 from "/img_rectangle_5593.png";
-import img3 from "/img_rectangle_5595.png";
-import img4 from "/img_rectangle_5594.png";
 import { Achievements } from "@/components/Achievements";
 import { TeaserHosts } from "@/components/TeaserHosts";
 
