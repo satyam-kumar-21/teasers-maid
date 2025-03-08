@@ -19,7 +19,8 @@ import { useState, useEffect, useRef } from "react"; // Import useState, useEffe
 
 export const Navbar = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false); // State to toggle the dropdown
-  const dropdownRef = useRef(null); // Reference for the dropdown menu
+  const dropdownRef = useRef<HTMLDivElement | null>(null); // Specify the type
+
 
   // Handle the toggle for the dropdown when clicked
   const toggleDropdown = () => {
