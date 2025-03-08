@@ -13,7 +13,7 @@ export const Footer: React.FC = () => {
                   alt="FlowBite Logo"
                 /> */}
               <span className="self-center text-2xl text-gray-900 font-semibold whitespace-nowrap dark:text-white">
-                Teasers Maid
+                Teasers
               </span>
             </Link>
           </div>
@@ -94,7 +94,7 @@ export const Footer: React.FC = () => {
           <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">
             © 2025{" "}
             <a href="https://flowbite.com" className="hover:underline">
-              Teasers Maid
+              Teasers
             </a>
             . All Rights Reserved.
           </span>

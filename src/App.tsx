@@ -5,6 +5,7 @@ import IndexPage from "@/pages/index";
 import AboutPage from "@/pages/about";
 import ListingPage from "@/pages/listing";
 import ServiceDetailsPage from "@/pages/ServiceDetailsPage";
+import NewUpdate from "./pages/NewUpdate";
 
 function App() {
   return (
@@ -17,6 +18,8 @@ function App() {
         <Route element={<AboutPage />} path="/about" />
         <Route element={<ListingPage />} path="/listing" />
         <Route element={<ServiceDetailsPage />} path="/listing/:id" />
+        <Route element={<ServiceDetailsPage />} path="/services/parties" />
+        <Route element={<NewUpdate />} path="/new-updates" />
       </Routes>
     </div>
   );
