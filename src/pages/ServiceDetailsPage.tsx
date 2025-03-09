@@ -1,220 +1,107 @@
+import { useParams } from "react-router-dom";
+import { teaserServices } from "@/components/Services"; // Ensure this import points to the correct file where `teaserServices` is stored.
+import { motion } from "framer-motion";
 import DefaultLayout from "@/layouts/default";
-import img1 from "/de1.png"; // Placeholder for service-related image
-import img2 from "/de2.png"; // Another image for services
-import img3 from "/de3.png"; // Additional image for services
-import img4 from "/img_rectangle_5599.png"; // Agent's image (or service provider's image)
-import { IoStarOutline, IoStarSharp } from "react-icons/io5";
-// import { useState } from "react";
+import { TeaserHosts } from "@/components/TeaserHosts";
 
-export default function ServiceDetailsPage() {
-  // const [submitted, setSubmitted] = useState<{
-  //   [k: string]: FormDataEntryValue;
-  // } | null>(null);
+const ServiceDetailsPage = () => {
+  const { serviceId } = useParams(); // Get serviceId from URL
+  const serviceIndex = parseInt(serviceId || "0", 10); // Convert the serviceId to an integer
+  const service = teaserServices[serviceIndex]; // Get the service from the teaserServices array
 
-  // console.log(submitted);
+  // If the service is not found, display an error message
+  if (!service) {
+    return (
+      <div className="text-center py-16">
+        <h2 className="text-2xl text-red-500">Service not found!</h2>
+      </div>
+    );
+  }
 
   return (
-    <DefaultLayout>
-      <section className="dark:bg-[#0a0b0d] bg-[#FFF7F0] dark:text-white h-auto py-10 relative md:px-12 px-4">
-        {/* Service Images Section */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-          <div className="rounded-xl md:col-span-2 overflow-hidden">
-            <img src={img1} alt="service image" className="h-full w-full object-cover" />
-          </div>
-          <div className="grid grid-cols-2 md:grid-cols-1 gap-5">
-            <div className="rounded-xl overflow-hidden">
-              <img
-                src={img2}
-                alt="service image"
-                className="h-full w-full object-cover"
-              />
-            </div>
-            <div className="rounded-xl overflow-hidden">
-              <img
-                src={img3}
-                alt="service image"
-                className="h-full w-full object-cover"
-              />
-            </div>
-          </div>
-        </div>
+    <DefaultLayout >
+    <section className="dark:text-white bg-white dark:bg-gray-900 py-16 px-4">
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.5 }}
+        className="max-w-6xl mx-auto mb-12"
+      >
+        <motion.h2
+          className="text-3xl sm:text-4xl font-bold text-gray-800 dark:text-yellow-400 mb-6"
+          initial={{ y: -20 }}
+          animate={{ y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
+          {service.title}
+        </motion.h2>
+        <motion.p
+          className="text-lg sm:text-xl md:text-2xl font-light text-gray-600 dark:text-gray-300 mb-8"
+          initial={{ y: 20 }}
+          animate={{ y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
+          {service.description}
+        </motion.p>
 
-        {/* Service Information */}
-        <div className="grid mt-6 grid-cols-1 md:grid-cols-3 gap-5">
-          <div className="rounded-xl md:col-span-2 px-6 py-6 overflow-hidden bg-white dark:bg-[#1A1B1E] border">
-            <h1 className="font-bold text-2xl">
-              Premium Teaser Performance for Events
-            </h1>
-            <h3 className="font-semibold mt-3 text-xl">
-              Perfect for parties, corporate events, and more!
-            </h3>
-            <div
-              style={{
-                paddingLeft: 20,
-                paddingRight: 100,
-                borderColor: "gray",
-              }}
-              className="border shadow-sm mt-5 w-fit rounded-xl py-1.5"
+        {/* Main image */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.6 }}
+          className="mb-8"
+        >
+          <img className="w-full rounded-lg" src={service.img} alt={service.title} />
+        </motion.div>
+
+        {/* Detailed Description */}
+        <motion.p
+          className="text-lg sm:text-xl md:text-2xl font-light text-gray-600 dark:text-gray-300 mb-8"
+          initial={{ y: 20 }}
+          animate={{ y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
+          {service.detailedDescription}
+        </motion.p>
+
+        {/* Additional Images */}
+        <motion.div
+          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mb-8"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.6 }}
+        >
+          {service.additionalImages.map((image, index) => (
+            <motion.div
+              key={index}
+              className="rounded-lg overflow-hidden shadow-md"
+              initial={{ scale: 0.9 }}
+              animate={{ scale: 1 }}
+              transition={{ duration: 0.5 }}
             >
-              <h3 className="font-semibold text-xl">$150/hr</h3>
-              <p className="text-sm text-gray-400">Flexible booking options</p>
-            </div>
-            <h3 className="font-semibold mt-8 text-lg">
-              A fantastic performance tailored to your event’s needs.
-            </h3>
-            <p className="mt-4 text-gray-600 dark:text-gray-400">
-              Our premium teaser shows are designed to create excitement and elevate your event experience. From parties to corporate gatherings, we have the perfect teaser performance for any occasion.
-            </p>
+              <img className="w-full h-full object-cover" src={image} alt={`Additional ${index + 1}`} />
+            </motion.div>
+          ))}
+        </motion.div>
 
-            <h1 className="font-bold text-2xl mt-10">Service Details</h1>
-
-            <div className="h-64 md:h-96 overflow-hidden w-full mt-5 border rounded-xl">
-              {/* Embedded service location map (optional for some services) */}
-              <iframe
-                src="https://www.google.com/maps/embed?pb=your-location-url-here"
-                width="100%"
-                height="100%"
-                style={{ border: 0 }}
-                allowFullScreen
-                loading="lazy"
-                className="w-full h-full"
-                referrerPolicy="no-referrer-when-downgrade"
-              />
-            </div>
-          </div>
-
-          {/* Booking Request Form */}
-          {/* <div className="rounded-xl h-fit col-span-1 px-6 py-6 overflow-hidden bg-white dark:bg-[#1A1B1E] border">
-            <h1 className="font-bold text-2xl">Request a Booking</h1>
-
-            <Form
-              onReset={() => setSubmitted(null)}
-              onSubmit={(e) => {
-                e.preventDefault();
-                let data = Object.fromEntries(new FormData(e.currentTarget));
-
-                console.log(data);
-                setSubmitted(data);
-              }}
-            >
-              <Input
-                isRequired
-                label="Name"
-                name="name"
-                className="mt-5"
-                type="text"
-                errorMessage="Name is required"
-                size="sm"
-              />
-              <Input
-                isRequired
-                label="Email"
-                name="email"
-                className="mt-3"
-                type="email"
-                errorMessage="Email is required"
-                size="sm"
-              />
-              <Input
-                isRequired
-                label="Phone"
-                name="phone"
-                className="mt-3"
-                type="number"
-                errorMessage="Phone is required"
-                size="sm"
-              />
-              <DatePicker
-                isRequired
-                label="Preferred Date"
-                name="date"
-                className="mt-3"
-                errorMessage="Date is required"
-                size="sm"
-              />
-              <Textarea
-                className="max-w-xs mt-3"
-                label="Additional Requests"
-                placeholder="Any specific requests or details"
-              />
-
-              <Button
-                type="submit"
-                className="mt-3 w-full bg-black text-white dark:bg-white dark:text-black"
-              >
-                Send Request
-              </Button>
-            </Form>
-          </div> */}
+        {/* WhatsApp Contact */}
+        <div className="text-center mt-8">
+          <a
+            href={service.whatsappLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-blue-500 text-white py-2 px-6 rounded-md hover:bg-blue-600"
+          >
+            Contact us on WhatsApp
+          </a>
         </div>
-
-        {/* Service Highlights */}
-        <div className="grid mt-6 grid-cols-1 md:grid-cols-3 gap-5">
-          <div className="rounded-xl md:col-span-2 px-6 py-6 overflow-hidden bg-white dark:bg-[#1A1B1E] border">
-            <h1 className="font-bold text-2xl">Service Highlights</h1>
-            <div className="grid grid-cols-2 ">
-              <div className="flex items-center justify-between pr-20">
-                <ul className="list-disc list-inside mt-4">
-                  <li className="font-semibold text-lg text-gray-600 dark:text-gray-300">
-                    Customizable Performance
-                  </li>
-                </ul>
-                <p className="mt-4 font-semibold">Yes</p>
-              </div>
-              <div className="flex items-center justify-between pr-20">
-                <ul className="list-disc list-inside mt-4">
-                  <li className="font-semibold text-lg text-gray-600 dark:text-gray-300">
-                    Available for Corporate Events
-                  </li>
-                </ul>
-                <p className="mt-4 font-semibold">Yes</p>
-              </div>
-              <div className="flex items-center justify-between pr-20">
-                <ul className="list-disc list-inside mt-4">
-                  <li className="font-semibold text-lg text-gray-600 dark:text-gray-300">
-                    Duration
-                  </li>
-                </ul>
-                <p className="mt-4 font-semibold">1-2 hours</p>
-              </div>
-              <div className="flex items-center justify-between pr-20">
-                <ul className="list-disc list-inside mt-4">
-                  <li className="font-semibold text-lg text-gray-600 dark:text-gray-300">
-                    Available Locations
-                  </li>
-                </ul>
-                <p className="mt-4 font-semibold">Nationwide</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Agent / Service Provider Information */}
-        <div className="grid mt-6 grid-cols-1 md:grid-cols-3 gap-5">
-          <div className="rounded-xl md:col-span-2 px-6 py-6 overflow-hidden bg-white dark:bg-[#1A1B1E] border">
-            <h1 className="font-bold text-2xl">Service Provider Information</h1>
-            <div className="flex mt-5 items-center gap-6">
-              <div className="h-28 w-28 rounded-xl overflow-hidden">
-                <img src={img4} alt="" className="w-full h-full object-cover" />
-              </div>
-              <div>
-                <h1 className="font-bold text-xl">Jane Doe</h1>
-                <div className="mt-1 flex gap-1">
-                  <IoStarSharp className="text-red-700 text-sm" />
-                  <IoStarSharp className="text-red-700 text-sm" />
-                  <IoStarOutline className="text-sm" />
-                  <IoStarOutline className="text-sm" />
-                  <IoStarOutline className="text-sm" />
-                </div>
-                <p className="text-sm font-medium text-gray-500">Service Expert</p>
-              </div>
-            </div>
-            <p className="mt-6 text-gray-600 dark:text-gray-400">
-              Jane has over 5 years of experience in creating and performing exclusive teaser shows for events across the country. She will work with you to ensure a memorable performance tailored to your needs.
-            </p>
-          </div>
-        </div>
-      </section>
+      </motion.div>
+    </section>
+    <TeaserHosts />
     </DefaultLayout>
+
+    
   );
-}
+};
+
+export default ServiceDetailsPage;

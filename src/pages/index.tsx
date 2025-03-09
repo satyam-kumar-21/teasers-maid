@@ -9,7 +9,7 @@ import Img3 from "/img_settings_orange_a700.svg"; // Image showing success after
 import Img4 from "/img_settings_orange_a700.svg"; // Image showing enjoyment after the service
 import { useEffect } from "react";
 import { Achievements } from "@/components/Achievements";
-import { Services } from "@/components/Services";
+import  Services  from "@/components/Services";
 import { TeaserHosts } from "@/components/TeaserHosts";
 
 const cards = [
