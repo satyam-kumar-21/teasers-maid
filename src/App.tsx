@@ -6,6 +6,9 @@ import AboutPage from "@/pages/about";
 import ListingPage from "@/pages/listing";
 import ServiceDetailsPage from "@/pages/ServiceDetailsPage";
 import NewUpdate from "./pages/NewUpdate";
+import BlogPage from "./pages/blogPage";
+import ContactPage from "./pages/ContactPage";
+import GalleryPage from "./pages/GalleryPage";
 
 function App() {
   return (
@@ -17,9 +20,12 @@ function App() {
         <Route element={<IndexPage />} path="/" />
         <Route element={<AboutPage />} path="/about" />
         <Route element={<ListingPage />} path="/listing" />
-        <Route element={<ServiceDetailsPage />} path="/listing/:id" />
-        <Route element={<ServiceDetailsPage />} path="/services/parties" />
+        <Route element={<ServiceDetailsPage />} path="/services/:id" />
+        <Route element={<ServiceDetailsPage />} path="/services/:parties" />
         <Route element={<NewUpdate />} path="/new-updates" />
+        <Route element={<BlogPage />} path="/blogs" />
+        <Route element={<GalleryPage />} path="/gallery" />
+        <Route element={<ContactPage />} path="/contact" />
       </Routes>
     </div>
   );
