@@ -30,14 +30,7 @@ const About = () => {
     }
   }, [isInView, mainControls, paragraphControls]);
 
-  const textVariants = {
-    hidden: { opacity: 0, y: 50 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.8, ease: "easeOut" },
-    },
-  };
+
 
   const headingVariants = {
     hidden: { opacity: 0 },
