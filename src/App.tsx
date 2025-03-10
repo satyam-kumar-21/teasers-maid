@@ -9,6 +9,8 @@ import NewUpdate from "./pages/NewUpdate";
 import BlogPage from "./pages/blogPage";
 import ContactPage from "./pages/ContactPage";
 import GalleryPage from "./pages/GalleryPage";
+import { Adminsidenav } from "./pages/admin/Adminsidenav";
+import AdminAbout from "./pages/admin/AdminAbout";
 
 function App() {
   return (
@@ -27,6 +29,10 @@ function App() {
         <Route element={<GalleryPage />} path="/gallery" />
         <Route element={<ContactPage />} path="/contact" />
         <Route element={<ServiceDetailsPage />} path="/service/:serviceId" />
+
+
+        <Route element={<Adminsidenav />} path="/admin" />
+        <Route element={<AdminAbout />} path="/admin/about" />
       </Routes>
     </div>
   );
