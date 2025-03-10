@@ -4,9 +4,9 @@ export const siteConfig = {
   navItems: [
     { label: "Home", href: "/" },
     { label: "About", href: "/about" },
-    { 
-      label: "Services", 
-      // href: "/services", 
+    {
+      label: "Services",
+      // href: "/services",
       dropdown: [
         { label: "All Services", href: "/listing" },
         { label: "Teasers in Parties", href: "/services/parties" },
@@ -15,35 +15,35 @@ export const siteConfig = {
         { label: "Teasers for Advertising", href: "/services/advertising" },
         { label: "Teasers for Models", href: "/services/models" },
         { label: "Outgoing with Teasers", href: "/services/outgoing" },
-        { label: "Teasers for Friendship", href: "/services/friendship" }
-      ]
-    },
-    { label: "New Updates", href: "/new-updates" },
-    { label: "Gallery", href: "/gallery" },
-    { label: "Blogs", href: "/blogs" },
-    { label: "Contact", href: "/contact" }
-  ],
-  navMenuItems: [
-    { label: "Home", href: "/" },
-    { label: "About", href: "/about" },
-    { 
-      label: "Services", 
-      // href: "/services", 
-      dropdown: [
-        { label: "All Services", href: "/listing" },
-        { label: "Teasers in Parties", href: "/services/parties" },
-        { label: "Coffee with Teasers", href: "/services/coffee" },
-        { label: "Teasers for Cheers", href: "/services/cheers" },
-        { label: "Teasers for Advertising", href: "/services/advertising" },
-        { label: "Teasers for Models", href: "/services/models" },
-        { label: "Outgoing with Teasers", href: "/services/outgoing" },
-        { label: "Teasers for Friendship", href: "/services/friendship" }
-      ]
+        { label: "Teasers for Friendship", href: "/services/friendship" },
+      ],
     },
     { label: "New Updates", href: "/new-updates" },
     { label: "Gallery", href: "/gallery" },
     { label: "Blogs", href: "/blogs" },
     { label: "Contact", href: "/contact" },
-    { label: "Login", href: "/" }
-  ]
+  ],
+  navMenuItems: [
+    { label: "Home", href: "/" },
+    { label: "About", href: "/about" },
+    {
+      label: "Services",
+      // href: "/services",
+      dropdown: [
+        { label: "All Services", href: "/listing" },
+        { label: "Teasers in Parties", href: "/services/parties" },
+        { label: "Coffee with Teasers", href: "/services/coffee" },
+        { label: "Teasers for Cheers", href: "/services/cheers" },
+        { label: "Teasers for Advertising", href: "/services/advertising" },
+        { label: "Teasers for Models", href: "/services/models" },
+        { label: "Outgoing with Teasers", href: "/services/outgoing" },
+        { label: "Teasers for Friendship", href: "/services/friendship" },
+      ],
+    },
+    { label: "New Updates", href: "/new-updates" },
+    { label: "Gallery", href: "/gallery" },
+    { label: "Blogs", href: "/blogs" },
+    { label: "Contact", href: "/contact" },
+    { label: "Login", href: "/" },
+  ],
 };
