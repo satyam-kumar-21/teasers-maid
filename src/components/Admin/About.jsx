@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import AdminSidebar from './AdminSidebar';
+import { Editor } from '@tinymce/tinymce-react';
 
 function About() {
   const [error, setError] = useState('');
@@ -19,12 +20,20 @@ function About() {
       try {
         const response = await axios.get(`${apiUrl}/about/get-about`);
         setAboutData(response.data);
+        if (response.data) {
+          // Pre-fill form data if the about data exists
+          setFormData({
+            description1: response.data.description1,
+            description2: response.data.description2,
+            image: null, // You can handle preloading image if needed
+          });
+        }
       } catch (error) {
         setError('Error fetching about data');
       }
     };
     fetchAboutData();
-  }, []);  // Empty dependency array ensures this runs only once when the component mounts
+  }, []);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -40,8 +49,8 @@ function About() {
     e.preventDefault();
     try {
       const formDataToSend = new FormData();
-      formDataToSend.append('description1', formData.description1);
-      formDataToSend.append('description2', formData.description2);
+      formDataToSend.append('description1', formData.description1); // HTML content for description1
+      formDataToSend.append('description2', formData.description2); // HTML content for description2
       formDataToSend.append('image', formData.image);
 
       const url = aboutData
@@ -75,8 +84,8 @@ function About() {
           {aboutData ? (
             <div className="flex items-start mb-4">
               <div className="mr-4">
-                <p className="text-xl text-gray-100 dark:text-white">{aboutData.description1}</p><br />
-                <p className="text-xl text-gray-100 dark:text-white">{aboutData.description2}</p>
+                <p className="text-xl text-gray-100 dark:text-white" dangerouslySetInnerHTML={{ __html: aboutData.description1 }}></p><br />
+                <p className="text-xl text-gray-100 dark:text-white" dangerouslySetInnerHTML={{ __html: aboutData.description2 }}></p>
               </div>
               {aboutData.image && (
                 <img
@@ -111,31 +120,47 @@ function About() {
                       <label htmlFor="description1" className="block text-gray-700 text-sm font-bold mb-2">
                         Description 1
                       </label>
-                      <textarea
-                        id="description1"
-                        name="description1"
-                        onChange={handleInputChange}
-                        className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                        rows="4"
-                        placeholder="Enter description 1"
+                      <Editor
+                        apiKey="your-tinymce-api-key" // Get your own TinyMCE API key
                         value={formData.description1}
-                        required
-                      ></textarea>
+                        onEditorChange={(value) => setFormData({ ...formData, description1: value })}
+                        init={{
+                          height: 300,
+                          menubar: true,
+                          plugins: [
+                            'advlist', 'autolink', 'lists', 'charmap', 'print', 'preview', 'anchor',
+                            'searchreplace', 'wordcount', 'visualblocks', 'code', 'textcolor'
+                          ],
+                          toolbar:
+                            'undo redo | formatselect | bold italic backcolor | alignleft aligncenter alignright alignjustify | ' +
+                            'bullist numlist outdent indent | removeformat | forecolor | backcolor | preview',
+                          content_style: 'body { font-family:Arial, sans-serif; font-size:14px }',
+                        }}
+                        className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                      />
                     </div>
                     <div className="mb-4">
                       <label htmlFor="description2" className="block text-gray-700 text-sm font-bold mb-2">
                         Description 2
                       </label>
-                      <textarea
-                        id="description2"
-                        name="description2"
-                        onChange={handleInputChange}
-                        className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                        rows="4"
-                        placeholder="Enter description 2"
+                      <Editor
+                        apiKey="your-tinymce-api-key" // Get your own TinyMCE API key
                         value={formData.description2}
-                        required
-                      ></textarea>
+                        onEditorChange={(value) => setFormData({ ...formData, description2: value })}
+                        init={{
+                          height: 300,
+                          menubar: true,
+                          plugins: [
+                            'advlist', 'autolink', 'lists', 'charmap', 'print', 'preview', 'anchor',
+                            'searchreplace', 'wordcount', 'visualblocks', 'code', 'textcolor'
+                          ],
+                          toolbar:
+                            'undo redo | formatselect | bold italic backcolor | alignleft aligncenter alignright alignjustify | ' +
+                            'bullist numlist outdent indent | removeformat | forecolor | backcolor | preview',
+                          content_style: 'body { font-family:Arial, sans-serif; font-size:14px }',
+                        }}
+                        className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                      />
                     </div>
                     <div className="mb-4">
                       <label htmlFor="image" className="block text-gray-700 text-sm font-bold mb-2">
@@ -148,7 +173,6 @@ function About() {
                         onChange={handleImageChange}
                         className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                         accept="image/*"
-                        required
                       />
                     </div>
                   </div>

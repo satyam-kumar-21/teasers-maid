@@ -17,6 +17,7 @@
     "@react-aria/visually-hidden": "3.8.19",
     "@react-types/shared": "3.27.0",
     "@reduxjs/toolkit": "^2.6.1",
+    "@tinymce/tinymce-react": "^6.0.0",
     "aos": "^2.3.4",
     "axios": "^1.8.3",
     "clsx": "^2.1.1",
@@ -24,8 +25,10 @@
     "react": "18.3.1",
     "react-dom": "18.3.1",
     "react-icons": "^5.5.0",
+    "react-quill": "^2.0.0",
     "react-redux": "^9.2.0",
     "react-router-dom": "6.23.0",
+    "slugify": "^1.6.6",
     "swiper": "^11.2.4",
     "tailwind-variants": "0.3.0",
     "tailwindcss": "^3.4.16"

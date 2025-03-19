@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom"; // Use `useNavigate` from React Router v6
 import { useSelector } from "react-redux"; // Assuming you're using Redux
+import slugify from "slugify"; // Import the slugify package
 
 // Define Service interface for type safety
 interface Service {
@@ -19,16 +20,16 @@ interface RootState {
   };
 }
 
-
-
 const Services = () => {
   const navigate = useNavigate(); // Use `useNavigate` from React Router v6
 
   // Accessing services from Redux store
   const services = useSelector((state: RootState) => state.service.services);
 
-  const navigateToDetailPage = (serviceId: string) => {
-    navigate(`/service/${serviceId}`); // Use `navigate` for navigation
+  // Function to handle navigation and slugify the heading
+  const navigateToDetailPage = (serviceTitle: string) => {
+    const slug = slugify(serviceTitle, { lower: true, replacement: "-" }); // Convert title to slug
+    navigate(`/service/${slug}`); // Navigate using the slugified version of the title
   };
 
   return (
@@ -51,13 +52,13 @@ const Services = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: "easeOut", delay: index * 0.2 }}
             className="cursor-pointer"
-            onClick={() => navigateToDetailPage(item._id)} // Use item._id for navigation
+            onClick={() => navigateToDetailPage(item.heading)} // Use item.heading for the URL
           >
             <div className="max-w-sm rounded overflow-hidden shadow-lg">
               <img className="w-full" src={item.image} alt={item.title} />
               <div className="px-6 py-4">
-                <div className="font-bold text-xl mb-2">{item.title}</div>
-                <p className="text-gray-700 text-base">{item.description}</p>
+                <div className="font-bold text-xl mb-2">{item.heading}</div>
+                {/* <p className="text-gray-700 text-base">{item.description}</p> */}
               </div>
             </div>
           </motion.div>

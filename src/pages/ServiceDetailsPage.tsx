@@ -4,8 +4,9 @@ import { useSelector } from "react-redux"; // Assuming you're using Redux
 import { TeaserHosts } from "@/components/TeaserHosts";
 import VisionMission from "@/components/VissionMission";
 
+// Service details component
 const ServiceDetails = () => {
-  const { serviceId } = useParams<{ serviceId: string }>(); // Get the serviceId from URL
+  const { serviceId } = useParams<{ serviceId: string }>(); // Get the serviceId (slug) from the URL
   const [service, setService] = useState<any>(null);
   const [loading, setLoading] = useState(true); // State to handle loading
   const services = useSelector((state: any) => state.service.services); // Accessing services from Redux store
@@ -17,17 +18,17 @@ const ServiceDetails = () => {
     if (serviceId) {
       setLoading(true); // Start loading when we begin fetching
 
-      // Check if services array is correctly populated and that each service has _id property
-      const foundService = services?.find((item: { _id: string | number }) => {
-        console.log("Comparing service _id:", item._id); // Log the service _id from the array
-        if (item._id === undefined) {
-          console.error("Service item missing '_id' property", item); // Log if any service item is missing the _id property
-        }
-        return item._id?.toString() === serviceId; // Convert both to string before comparison
+      // Convert the slugified serviceId back to the original format (with spaces instead of hyphens)
+      const formattedServiceId = serviceId.replace(/-/g, " "); // Replace hyphens with spaces
+
+      // Check if services array is correctly populated and that each service has a 'heading' property
+      const foundService = services?.find((item: { heading: string | number }) => {
+        console.log("Comparing service heading:", item.heading); // Log the service heading
+        return item.heading?.toString().toLowerCase() === formattedServiceId.toLowerCase(); // Case-insensitive comparison
       });
 
       if (!foundService) {
-        console.error(`Service with ID ${serviceId} not found.`);
+        console.error(`Service with heading "${formattedServiceId}" not found.`);
       }
 
       setService(foundService || null); // Set the found service or null
@@ -39,7 +40,7 @@ const ServiceDetails = () => {
   if (loading) {
     return (
       <div className="flex justify-center items-center h-screen">
-        <div className="text-3xl text-gray-600">Loading...</div> {/* Show loading while data is being fetched */}
+        <div className="text-3xl text-gray-600">Loading...</div>
       </div>
     );
   }
@@ -78,9 +79,10 @@ const ServiceDetails = () => {
         </div>
 
         {/* Service Description */}
-        <p className="text-lg sm:text-xl md:text-2xl font-light text-gray-600 dark:text-gray-300 mb-8 leading-relaxed">
-          {service.description}
-        </p>
+        <div
+          className="text-lg sm:text-xl md:text-2xl font-light text-gray-600 dark:text-gray-300 mb-8 leading-relaxed"
+          dangerouslySetInnerHTML={{ __html: service.description }} // Rendering rich text description
+        />
 
         {/* Contact Button */}
         <div className="mt-8">

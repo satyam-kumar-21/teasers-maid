@@ -85,19 +85,19 @@ const About = () => {
           
           {/* Dynamically render descriptions from Redux state */}
           <motion.p
-            className="text-lg sm:text-xl md:text-2xl font-light text-gray-600 dark:text-gray-300 mb-8"
-            variants={wordVariants}
-            style={{ transform: `translateY(${scrollY * 0.05}px)` }}
-          >
-            {aboutData?.description1}
-          </motion.p>
-          <motion.p
-            className="text-lg sm:text-xl md:text-2xl font-light text-gray-600 dark:text-gray-300 mb-8"
-            variants={wordVariants}
-            style={{ transform: `translateY(${scrollY * 0.05}px)` }}
-          >
-            {aboutData?.description2}
-          </motion.p>
+  className="text-lg sm:text-xl md:text-2xl font-light text-gray-600 dark:text-gray-300 mb-8"
+  variants={wordVariants}
+  style={{ transform: `translateY(${scrollY * 0.05}px)` }}
+  dangerouslySetInnerHTML={{ __html: aboutData?.description1 }}
+/>
+
+<motion.p
+  className="text-lg sm:text-xl md:text-2xl font-light text-gray-600 dark:text-gray-300 mb-8"
+  variants={wordVariants}
+  style={{ transform: `translateY(${scrollY * 0.05}px)` }}
+  dangerouslySetInnerHTML={{ __html: aboutData?.description2 }}
+/>
+
 
         </motion.div>
       </section>
