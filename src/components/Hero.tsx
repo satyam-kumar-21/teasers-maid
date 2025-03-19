@@ -12,9 +12,7 @@ import { Button } from "@heroui/react";
 export const Hero: React.FC = () => {
   const ref = useRef<HTMLElement>(null);
   const isInView = useInView(ref, { once: false });
-  const [submitted, setSubmitted] = React.useState<{
-    [k: string]: FormDataEntryValue;
-  } | null>(null);
+
 
   const mainControls = useAnimation();
   const paragraphControls = useAnimation();
@@ -66,7 +64,7 @@ export const Hero: React.FC = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  console.log(submitted);
+  
 
   return (
     <>

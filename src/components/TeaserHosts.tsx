@@ -51,7 +51,7 @@ export const TeaserHosts: React.FC = () => {
         autoplay={{ delay: 3000 }}
       >
         {topTeasers && topTeasers.length > 0 ? (
-          topTeasers.map((item, index) => (
+          topTeasers.map((item: TeaserHost) => (  // Ensure item is typed as TeaserHost
             <SwiperSlide key={item.id} className="py-10">
               <Card className="py-4 w-full shadow-none border border-[#FFCEB2] dark:border-[#878786]">
                 <CardBody className="overflow-visible py-2">
