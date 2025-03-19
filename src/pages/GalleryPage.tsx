@@ -1,9 +1,15 @@
 import DefaultLayout from "@/layouts/default";
 import { useSelector } from "react-redux";
 
+// Defining the type for gallery item
+interface Gallery {
+  image: string;
+  description: string;
+}
+
 export default function GalleryPage() {
-    // Access the gallery data from Redux store
-    const galleries = useSelector((state: any) => state.gallery.galleries);
+    // Access the gallery data from Redux store with type safety
+    const galleries = useSelector((state: { gallery: { galleries: Gallery[] } }) => state.gallery.galleries);
 
     return (
         <DefaultLayout>
@@ -18,7 +24,9 @@ export default function GalleryPage() {
                                     alt={`Gallery Image ${index + 1}`}
                                     className="w-full h-64 object-cover rounded-md transition-all transform group-hover:rotate-3 group-hover:scale-110"
                                 />
-                                <p className="text-center mt-4 text-sm text-gray-800 dark:text-gray-200">{gallery.description}</p> {/* Dynamic description from Redux store */}
+                                <p className="text-center mt-4 text-sm text-gray-800 dark:text-gray-200">
+                                    {gallery.description} {/* Dynamic description from Redux store */}
+                                </p>
                             </div>
                             <div className="absolute top-0 left-0 right-0 bottom-0 bg-black opacity-0 group-hover:opacity-50 transition-opacity rounded-md"></div>
                         </div>

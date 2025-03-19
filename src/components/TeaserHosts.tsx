@@ -5,10 +5,24 @@ import "swiper/css/pagination";
 import { Autoplay } from "swiper/modules";
 import { Card, CardBody, CardHeader, Image } from "@heroui/react";
 
+// Define types for the Top Teasers data
+interface TeaserHost {
+  id: string; // assuming there's a unique id for each teaser host
+  image: string; 
+  description: string;
+}
+
+// Define the Redux state structure
+interface RootState {
+  topTeaser: {
+    topTeasers: TeaserHost[];
+  };
+}
+
 // Updated component with state from Redux
 export const TeaserHosts: React.FC = () => {
-  // Fetch top teasers from the Redux store (assuming the topTeasers data is in state.topTeaser.topTeasers)
-  const topTeasers = useSelector((state) => state.topTeaser.topTeasers);
+  // Fetch top teasers from the Redux store
+  const topTeasers = useSelector((state: RootState) => state.topTeaser.topTeasers);
 
   return (
     <section className="h-auto mt-16 md:px-16 px-4 w-full">
@@ -38,7 +52,7 @@ export const TeaserHosts: React.FC = () => {
       >
         {topTeasers && topTeasers.length > 0 ? (
           topTeasers.map((item, index) => (
-            <SwiperSlide key={index} className="py-10">
+            <SwiperSlide key={item.id} className="py-10">
               <Card className="py-4 w-full shadow-none border border-[#FFCEB2] dark:border-[#878786]">
                 <CardBody className="overflow-visible py-2">
                   <Image

@@ -2,56 +2,34 @@ import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom"; // Use `useNavigate` from React Router v6
 import { useSelector } from "react-redux"; // Assuming you're using Redux
 
+// Define Service interface for type safety
+interface Service {
+  _id: string; // Assuming the services have an ID
+  title: string;
+  image: string;
+  heading: string;
+  description: string;
+  whatsappLink: string;
+}
 
-// servicesData.ts
+// Assuming the Redux state has a 'services' slice
+interface RootState {
+  service: {
+    services: Service[];
+  };
+}
 
-export const teaserServices = [
-  {
-    title: "Teasers in Parties",
-    img: "https://media.istockphoto.com/id/1441421094/photo/group-of-young-people-boys-and-girls-attending-party-dancing-having-fun-over-dark-background.jpg?s=612x612&w=0&k=20&c=dnRsSPyG5ordgnYYmp8Kpj-3kLVtPbZYLhwfqQy-jiU=",
-    description: "Exciting teaser shows for parties and events.",
-    whatsappLink: "https://wa.me/916203176139",
-  },
-  {
-    title: "Coffee with Teasers",
-    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6wRDp2TiJDziw9rbT_0nIZy099uX3JnND-w&s",
-    description: "Enjoy a cup of coffee with live teaser performances.",
-    whatsappLink: "https://wa.me/916203176139",
-  },
-  {
-    title: "Teasers for Cheers",
-    img: "https://img.freepik.com/premium-photo/young-couple-enjoying-romantic-dinner-together_650366-2149.jpg",
-    description: "Teaser performances to keep the energy high at your celebrations.",
-    whatsappLink: "https://wa.me/916203176139",
-  },
-  {
-    title: "Teasers for Advertising",
-    img: "https://www.shutterstock.com/shutterstock/photos/2080552369/display_1500/stock-photo-portrait-of-attractive-cheerful-girl-holding-on-palm-copy-space-choosing-idea-isolated-over-bright-2080552369.jpg",
-    description: "Specialized teaser performances for marketing and brand promotions.",
-    whatsappLink: "https://wa.me/916203176139",
-  },
-  {
-    title: "Teasers for Models",
-    img: "https://live.staticflickr.com/1817/44017758412_e0e9d33efc_c.jpg",
-    description: "Teaser performances to showcase models and fashion events.",
-    whatsappLink: "https://wa.me/916203176139",
-  },
-];
 
 
 const Services = () => {
   const navigate = useNavigate(); // Use `useNavigate` from React Router v6
 
   // Accessing services from Redux store
-  const services = useSelector((state: any) => state.service.services);
+  const services = useSelector((state: RootState) => state.service.services);
 
-  const navigateToDetailPage = (serviceId: number) => {
+  const navigateToDetailPage = (serviceId: string) => {
     navigate(`/service/${serviceId}`); // Use `navigate` for navigation
   };
-
-
-
-  
 
   return (
     <section className="dark:text-white bg-white dark:bg-gray-900 py-16 px-4 text-center">
@@ -66,20 +44,20 @@ const Services = () => {
       </motion.div>
 
       <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 justify-center">
-        {services.map((item, index) => (
+        {services.map((item: Service, index: number) => (
           <motion.div
-            key={index}
+            key={item._id}
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: "easeOut", delay: index * 0.2 }}
             className="cursor-pointer"
-            onClick={() => navigateToDetailPage(item._id)} // Use item.id if available instead of index
+            onClick={() => navigateToDetailPage(item._id)} // Use item._id for navigation
           >
             <div className="max-w-sm rounded overflow-hidden shadow-lg">
               <img className="w-full" src={item.image} alt={item.title} />
               <div className="px-6 py-4">
                 <div className="font-bold text-xl mb-2">{item.title}</div>
-                <p className="text-gray-700 text-base">{item.heading}</p>
+                <p className="text-gray-700 text-base">{item.description}</p>
               </div>
             </div>
           </motion.div>

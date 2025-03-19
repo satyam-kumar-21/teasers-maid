@@ -6,7 +6,7 @@ const Contact = () => {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' , mobile:''});
   const [submitting, setSubmitting] = useState(false);
   const [message, setMessage] = useState('');
-  const apiUrl = "http://127.0.0.1:3000";
+  const apiUrl = "https://teasers-backend-host.vercel.app";
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -49,7 +49,7 @@ const Contact = () => {
                 Address
               </h3>
               <p className="text-gray-700 dark:text-white mb-4">
-                Select Maid, 258, First Floor, Hari Nagar Ashram, Mathura Road, New Delhi 110014
+                Teasers, 258, First Floor, Hari Nagar Ashram, Mathura Road, New Delhi 110014
               </p>
               <h3 className="text-2xl font-semibold text-gray-800 dark:text-white mb-4">
                 Contact Information

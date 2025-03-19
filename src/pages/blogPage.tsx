@@ -1,9 +1,19 @@
 import { useSelector } from 'react-redux'; // Importing useSelector from Redux
 import DefaultLayout from "@/layouts/default";
 
+// Defining BlogPost type for TypeScript type safety
+interface BlogPost {
+  id: string;
+  image: string;
+  title: string;
+  description: string;
+  createdAt: string;
+  link: string;
+}
+
 export default function BlogPage() {
   // Fetch blog posts from the Redux store (assuming the blog data is in state.blogs.blogs)
-  const blogPosts = useSelector((state) => state.blogs.blogs);
+  const blogPosts = useSelector((state: any) => state.blogs.blogs);
 
   return (
     <DefaultLayout>
@@ -13,8 +23,8 @@ export default function BlogPage() {
         {/* Blog Teasers */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-6">
           {blogPosts && blogPosts.length > 0 ? (
-            blogPosts.map((post, index) => (
-              <div key={index} className="bg-white dark:bg-[#1a1a1a] p-6 rounded-lg shadow-lg hover:shadow-2xl transition-all">
+            blogPosts.map((post: BlogPost) => (
+              <div key={post.id} className="bg-white dark:bg-[#1a1a1a] p-6 rounded-lg shadow-lg hover:shadow-2xl transition-all">
                 {/* Image */}
                 <img
                   src={post.image || "https://via.placeholder.com/300"} // Fallback if no image
@@ -22,7 +32,7 @@ export default function BlogPage() {
                   className="w-full h-64 object-cover rounded-lg mb-4"
                 />
                 {/* Title (Heading) */}
-                <h2 className="text-2xl font-semibold text-gray-800 dark:text-white mb-4">{post.heading}</h2>
+                <h2 className="text-2xl font-semibold text-gray-800 dark:text-white mb-4 truncate">{post.title}</h2> {/* Added 'truncate' */}
                 {/* Description */}
                 <p className="text-gray-600 dark:text-gray-300 mb-4">{post.description}</p>
                 {/* Date & Read More */}
