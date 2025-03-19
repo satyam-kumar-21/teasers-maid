@@ -1,107 +1,102 @@
-import { useParams } from "react-router-dom";
-import { teaserServices } from "@/components/Services"; // Ensure this import points to the correct file where `teaserServices` is stored.
-import { motion } from "framer-motion";
-import DefaultLayout from "@/layouts/default";
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom"; // To get the id from the URL
+import { useSelector } from "react-redux"; // Assuming you're using Redux
 import { TeaserHosts } from "@/components/TeaserHosts";
+import VisionMission from "@/components/VissionMission";
 
-const ServiceDetailsPage = () => {
-  const { serviceId } = useParams(); // Get serviceId from URL
-  const serviceIndex = parseInt(serviceId || "0", 10); // Convert the serviceId to an integer
-  const service = teaserServices[serviceIndex]; // Get the service from the teaserServices array
+const ServiceDetails = () => {
+  const { serviceId } = useParams<{ serviceId: string }>(); // Get the serviceId from URL
+  const [service, setService] = useState<any>(null);
+  const [loading, setLoading] = useState(true); // State to handle loading
+  const services = useSelector((state: any) => state.service.services); // Accessing services from Redux store
 
-  // If the service is not found, display an error message
-  if (!service) {
+  useEffect(() => {
+    console.log("Service ID from URL:", serviceId); // Debug serviceId
+    console.log("Available Services:", services); // Debug services array
+
+    if (serviceId) {
+      setLoading(true); // Start loading when we begin fetching
+
+      // Check if services array is correctly populated and that each service has _id property
+      const foundService = services?.find((item: { _id: string | number }) => {
+        console.log("Comparing service _id:", item._id); // Log the service _id from the array
+        if (item._id === undefined) {
+          console.error("Service item missing '_id' property", item); // Log if any service item is missing the _id property
+        }
+        return item._id?.toString() === serviceId; // Convert both to string before comparison
+      });
+
+      if (!foundService) {
+        console.error(`Service with ID ${serviceId} not found.`);
+      }
+
+      setService(foundService || null); // Set the found service or null
+      setLoading(false); // Set loading to false once data is fetched
+    }
+  }, [serviceId, services]); // Re-run effect when serviceId or services change
+
+  // Show loading or error state
+  if (loading) {
     return (
-      <div className="text-center py-16">
-        <h2 className="text-2xl text-red-500">Service not found!</h2>
+      <div className="flex justify-center items-center h-screen">
+        <div className="text-3xl text-gray-600">Loading...</div> {/* Show loading while data is being fetched */}
       </div>
     );
   }
 
+  if (!serviceId) {
+    return (
+      <div className="flex justify-center items-center h-screen">
+        <div className="text-3xl text-red-600">Invalid Service ID</div>
+      </div>
+    ); // If no serviceId is passed
+  }
+
+  if (!service) {
+    return (
+      <div className="flex justify-center items-center h-screen">
+        <div className="text-3xl text-red-600">Service not found</div>
+      </div>
+    ); // If no matching service is found
+  }
+
   return (
-    <DefaultLayout >
-    <section className="dark:text-white bg-white dark:bg-gray-900 py-16 px-4">
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.5 }}
-        className="max-w-6xl mx-auto mb-12"
-      >
-        <motion.h2
-          className="text-3xl sm:text-4xl font-bold text-gray-800 dark:text-yellow-400 mb-6"
-          initial={{ y: -20 }}
-          animate={{ y: 0 }}
-          transition={{ duration: 0.6 }}
-        >
-          {service.title}
-        </motion.h2>
-        <motion.p
-          className="text-lg sm:text-xl md:text-2xl font-light text-gray-600 dark:text-gray-300 mb-8"
-          initial={{ y: 20 }}
-          animate={{ y: 0 }}
-          transition={{ duration: 0.6 }}
-        >
+    <section className="dark:text-white bg-white dark:bg-gray-900 py-16 px-4 text-center">
+      <div className="max-w-4xl mx-auto space-y-8">
+        {/* Heading */}
+        <h2 className="text-4xl font-semibold text-gray-800 dark:text-yellow-400 mb-6">
+          {service.heading}
+        </h2>
+
+        {/* Service Image */}
+        <div className="overflow-hidden rounded-lg shadow-lg mb-6">
+          <img
+            className="w-full h-80 object-cover transform hover:scale-110 transition-transform duration-500"
+            src={service.image}
+            alt={service.heading}
+          />
+        </div>
+
+        {/* Service Description */}
+        <p className="text-lg sm:text-xl md:text-2xl font-light text-gray-600 dark:text-gray-300 mb-8 leading-relaxed">
           {service.description}
-        </motion.p>
+        </p>
 
-        {/* Main image */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.6 }}
-          className="mb-8"
-        >
-          <img className="w-full rounded-lg" src={service.img} alt={service.title} />
-        </motion.div>
-
-        {/* Detailed Description */}
-        <motion.p
-          className="text-lg sm:text-xl md:text-2xl font-light text-gray-600 dark:text-gray-300 mb-8"
-          initial={{ y: 20 }}
-          animate={{ y: 0 }}
-          transition={{ duration: 0.6 }}
-        >
-          {service.detailedDescription}
-        </motion.p>
-
-        {/* Additional Images */}
-        <motion.div
-          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mb-8"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.6 }}
-        >
-          {service.additionalImages.map((image, index) => (
-            <motion.div
-              key={index}
-              className="rounded-lg overflow-hidden shadow-md"
-              initial={{ scale: 0.9 }}
-              animate={{ scale: 1 }}
-              transition={{ duration: 0.5 }}
-            >
-              <img className="w-full h-full object-cover" src={image} alt={`Additional ${index + 1}`} />
-            </motion.div>
-          ))}
-        </motion.div>
-
-        {/* WhatsApp Contact */}
-        <div className="text-center mt-8">
+        {/* Contact Button */}
+        <div className="mt-8">
           <a
-            href={service.whatsappLink}
+            href="https://wa.me/916203176139"
             target="_blank"
-            rel="noopener noreferrer"
-            className="bg-blue-500 text-white py-2 px-6 rounded-md hover:bg-blue-600"
+            className="text-white bg-blue-600 hover:bg-blue-700 font-semibold py-4 px-8 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out transform hover:scale-105"
           >
             Contact us on WhatsApp
           </a>
         </div>
-      </motion.div>
+      </div>
+      <VisionMission />
+      <TeaserHosts />
     </section>
-    <TeaserHosts />
-    </DefaultLayout>
-
-    
   );
 };
 
-export default ServiceDetailsPage;
+export default ServiceDetails;

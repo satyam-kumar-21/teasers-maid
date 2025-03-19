@@ -1,10 +1,7 @@
-
-
 function VisionMission() {
   return (
     <div className="py-16 px-4 text-center bg-white dark:bg-gray-900">
-      <div className="max-w-6xl mx-auto">
-       
+      <div className="max-w-6xl mx-auto space-y-12">
 
         {/* Mission Section */}
         <section>
@@ -18,19 +15,18 @@ function VisionMission() {
               className="w-full h-64 object-cover rounded-lg shadow-lg"
             />
             <p className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white font-bold text-xl sm:text-2xl md:text-3xl">
-              Delivering Excellence and Empowering Change
+              Empowering Transformation through Expertise
             </p>
           </div>
           <p className="text-lg sm:text-xl md:text-2xl font-light text-gray-600 dark:text-gray-300">
-            Our mission is to deliver exceptional experiences and services that exceed customer expectations.
-            We aim to create an environment where creativity thrives, fostering a culture of innovation, collaboration,
-            and continuous improvement.
+            At the heart of our mission is a deep commitment to helping individuals and organizations overcome their toughest challenges.
+            We craft personalized tearsheet sessions that provide actionable insights and strategies needed to drive success. 
+            We aim to make a tangible impact on every client we serve, guiding them toward their goals with clarity, precision, and purpose.
           </p>
         </section>
 
-
          {/* Vision Section */}
-         <section className="mb-12">
+         <section>
           <h2 className="text-4xl sm:text-5xl font-bold text-gray-800 dark:text-yellow-400 mb-6">
             Our Vision
           </h2>
@@ -41,14 +37,16 @@ function VisionMission() {
               className="w-full h-64 object-cover rounded-lg shadow-lg"
             />
             <p className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white font-bold text-xl sm:text-2xl md:text-3xl">
-              Inspiring a Future of Innovation and Excellence
+              Leading with Purpose and Insight
             </p>
           </div>
           <p className="text-lg sm:text-xl md:text-2xl font-light text-gray-600 dark:text-gray-300">
-            Our vision is to be a leading force in the industry, creating a lasting impact through innovative solutions.
-            We are committed to empowering communities, fostering creativity, and providing value-driven experiences.
+            Our vision is to become a beacon of insight and guidance for individuals and organizations seeking meaningful progress. 
+            We strive to be recognized for our ability to create lasting change, empowering others through knowledge, strategy, and tailored action plans.
+            By continuously innovating and evolving, we aim to create a future where anyone can unlock their full potential, regardless of their starting point.
           </p>
         </section>
+
       </div>
     </div>
   );

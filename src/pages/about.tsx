@@ -4,8 +4,9 @@ import { motion, useAnimation, useInView } from "framer-motion";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { Achievements } from "@/components/Achievements";
-import { TeaserHosts } from "@/components/TeaserHosts";
+import { TeaserHosts } from "../components/TeaserHosts";
 import VissionMission from "@/components/VissionMission";
+import { useSelector } from "react-redux";
 
 const About = () => {
   useEffect(() => {
@@ -29,8 +30,6 @@ const About = () => {
       paragraphControls.start("hidden");
     }
   }, [isInView, mainControls, paragraphControls]);
-
-
 
   const headingVariants = {
     hidden: { opacity: 0 },
@@ -61,6 +60,9 @@ const About = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Access the data from Redux store
+  const aboutData = useSelector((state: any) => state.about.about);
+
   return (
     <DefaultLayout>
       <section
@@ -80,27 +82,23 @@ const About = () => {
           >
             About Us
           </motion.h2>
+          
+          {/* Dynamically render descriptions from Redux state */}
           <motion.p
             className="text-lg sm:text-xl md:text-2xl font-light text-gray-600 dark:text-gray-300 mb-8"
             variants={wordVariants}
             style={{ transform: `translateY(${scrollY * 0.05}px)` }}
           >
-            Hello, and welcome to our platform! As the owner, I wanted to take a moment to personally thank you for being part of our community. We're committed to providing you with the best possible experiences, whether you're booking for a dinner date, a coffee hangout, or a private party. Your satisfaction and enjoyment are our top priority!
+            {aboutData?.description1}
           </motion.p>
           <motion.p
             className="text-lg sm:text-xl md:text-2xl font-light text-gray-600 dark:text-gray-300 mb-8"
             variants={wordVariants}
             style={{ transform: `translateY(${scrollY * 0.05}px)` }}
           >
-            We are continuously working to improve and expand our offerings, ensuring that you always have access to exciting new teasers and experiences. Stay tuned for upcoming updates, special offers, and unique content tailored to your needs!
+            {aboutData?.description2}
           </motion.p>
-          <motion.p
-            className="text-lg sm:text-xl md:text-2xl font-light text-gray-600 dark:text-gray-300 mb-8"
-            variants={wordVariants}
-            style={{ transform: `translateY(${scrollY * 0.05}px)` }}
-          >
-            Thank you for your continued support. We're thrilled to have you on this journey with us, and we look forward to delivering even more unforgettable moments to you soon!
-          </motion.p>
+
         </motion.div>
       </section>
 
@@ -137,9 +135,6 @@ const About = () => {
           </div>
         </div>
       </div>
-
-
-
 
       <Achievements />
 

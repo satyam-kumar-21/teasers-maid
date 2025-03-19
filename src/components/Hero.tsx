@@ -1,18 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { motion, useAnimation, useInView } from "framer-motion";
 import { FaArrowRight } from "react-icons/fa6";
-import {
-  Modal,
-  ModalContent,
-  ModalHeader,
-  ModalBody,
-  Button,
-  useDisclosure,
-  Form,
-  Input,
-  Select,
-  SelectItem,
-} from "@heroui/react";
+import { Button } from "@heroui/react";
 
 const teaserTypes = [
   { key: "Dinner", label: "Dinner" },
@@ -55,7 +44,6 @@ const SelectorIcon = (props: React.SVGProps<SVGSVGElement>) => {
 export const Hero: React.FC = () => {
   const ref = useRef<HTMLElement>(null);
   const isInView = useInView(ref, { once: false });
-  const { isOpen, onOpen, onOpenChange } = useDisclosure();
   const [submitted, setSubmitted] = React.useState<{
     [k: string]: FormDataEntryValue;
   } | null>(null);
@@ -165,111 +153,19 @@ export const Hero: React.FC = () => {
               variants={textVariants}
               style={{ transform: `translateY(${scrollY * 0.15}px)` }}
             >
+              {/* Modified the button to link to WhatsApp */}
               <Button
                 className="bg-[#ffceb2] dark:bg-[#FACC15] text-black"
                 size="lg"
                 radius="full"
-                onPress={onOpen}
+                onClick={() => window.open("https://wa.me/916203176139", "_blank")} // WhatsApp link with provided number
               >
                 Book a Teaser <FaArrowRight className="h-4 w-4 text-black" />
-              </Button>
-
-              <Button
-                size="lg"
-                radius="full"
-                variant="bordered"
-                className="border-[#ffceb2] dark:border-[#FACC15] text-[#f07e3c] dark:text-[#FACC15]"
-              >
-                Become a Partner
-                <FaArrowRight className="h-4 w-4 text-[#f07e3c] dark:text-[#FACC15]" />
               </Button>
             </motion.div>
           </div>
         </motion.div>
       </section>
-
-      <Modal
-        isOpen={isOpen}
-        placement="center"
-        size="xl"
-        onOpenChange={onOpenChange}
-      >
-        <ModalContent>
-          {() => (
-            <>
-              <ModalHeader className="flex flex-col gap-1">
-                <h2 className="text-2xl font-bold">Book Your Teaser</h2>
-                <p className="text-base font-light">
-                  Choose your perfect teaser for any occasion.
-                </p>
-              </ModalHeader>
-              <ModalBody>
-                <Form
-                  className="w-full max-w-xl"
-                  onReset={() => setSubmitted(null)}
-                  onSubmit={(e) => {
-                    e.preventDefault();
-                    let data = Object.fromEntries(new FormData(e.currentTarget));
-                    console.log(data);
-                    setSubmitted(data);
-                  }}
-                >
-                  <Input
-                    isRequired
-                    label="City/Location"
-                    labelPlacement="outside"
-                    name="city"
-                    placeholder="Enter city or location"
-                    type="text"
-                    errorMessage="City/Location is required"
-                  />
-
-                  <Select
-                    isRequired
-                    disableSelectorIconRotation
-                    className="max-w-xl"
-                    label="Teaser Type"
-                    labelPlacement="outside"
-                    name="teaserType"
-                    placeholder="Select a teaser type"
-                    selectorIcon={<SelectorIcon />}
-                  >
-                    {teaserTypes.map((teaserType) => (
-                      <SelectItem key={teaserType.key}>
-                        {teaserType.label}
-                      </SelectItem>
-                    ))}
-                  </Select>
-
-                  <Select
-                    isRequired
-                    disableSelectorIconRotation
-                    className="max-w-xl"
-                    name="timeSlot"
-                    label="Preferred Time Slot"
-                    labelPlacement="outside"
-                    placeholder="Select a time slot"
-                    selectorIcon={<SelectorIcon />}
-                  >
-                    {timeSlots.map((timeSlot) => (
-                      <SelectItem key={timeSlot.key}>
-                        {timeSlot.label}
-                      </SelectItem>
-                    ))}
-                  </Select>
-
-                  <Button
-                    type="submit"
-                    className="mt-4 w-full bg-black text-white dark:bg-white dark:text-black"
-                  >
-                    Book Teaser
-                  </Button>
-                </Form>
-              </ModalBody>
-            </>
-          )}
-        </ModalContent>
-      </Modal>
     </>
   );
 };

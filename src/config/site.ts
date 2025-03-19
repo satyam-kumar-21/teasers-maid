@@ -7,15 +7,20 @@ export const siteConfig = {
     { 
       label: "Services", 
       // href: "/services", 
-      dropdown: [
-        { label: "All Services", href: "/listing" },
-        { label: "Teasers in Parties", href: "/services/parties" },
-        { label: "Coffee with Teasers", href: "/services/coffee" },
-        { label: "Teasers for Cheers", href: "/services/cheers" },
-        { label: "Teasers for Advertising", href: "/services/advertising" },
-        { label: "Teasers for Models", href: "/services/models" },
-        { label: "Outgoing with Teasers", href: "/services/outgoing" },
-        { label: "Teasers for Friendship", href: "/services/friendship" }
+      dropdown : [
+        
+        { label: "Indian Models", href: "/service/67da9bd928c3143cbf89bf9a" },
+        { label: "Hosts and Hostesses", href: "/service/67da9c8728c3143cbf89bfbe" },
+        { label: "Promoters", href: "/service/67da9c9d28c3143cbf89bfc0" },
+        { label: "Mascots", href: "/service/67da9cb728c3143cbf89bfc2" },
+        { label: "International Models", href: "/service/67da9cd428c3143cbf89bfc4" },
+        { label: "Vip Hospitality", href: "/service/67da9ceb28c3143cbf89bfc6" },
+        { label: "Volunteers", href: "/service/67da9d0328c3143cbf89bfc8" },
+        { label: "Anchors", href: "/service/67da9d1928c3143cbf89bfca" },
+        { label: "Cheerleaders", href: "/service/67da9d2d28c3143cbf89bfcc" },
+        { label: "Supervisor", href: "/service/67da9d4228c3143cbf89bfce" },
+        { label: "Runner", href: "/service/67da9d5828c3143cbf89bfd0" },
+        { label: "Support Services", href: "/service/67da9d6b28c3143cbf89bfd2" }
       ]
     },
     { label: "New Updates", href: "/new-updates" },
@@ -29,15 +34,20 @@ export const siteConfig = {
     { 
       label: "Services", 
       // href: "/services", 
-      dropdown: [
-        { label: "All Services", href: "/listing" },
-        { label: "Teasers in Parties", href: "/services/parties" },
-        { label: "Coffee with Teasers", href: "/services/coffee" },
-        { label: "Teasers for Cheers", href: "/services/cheers" },
-        { label: "Teasers for Advertising", href: "/services/advertising" },
-        { label: "Teasers for Models", href: "/services/models" },
-        { label: "Outgoing with Teasers", href: "/services/outgoing" },
-        { label: "Teasers for Friendship", href: "/services/friendship" }
+      dropdown : [
+       
+        { label: "Indian Models", href: "/services/indian-models" },
+        { label: "Hosts and Hostesses", href: "/services/hosts-and-hostesses" },
+        { label: "Promoters", href: "/services/promoters" },
+        { label: "Mascots", href: "/services/mascots" },
+        { label: "International Models", href: "/services/international-models" },
+        { label: "Vip Hospitality", href: "/services/vip-hospitality" },
+        { label: "Volunteers", href: "/services/volunteers" },
+        { label: "Anchors", href: "/services/anchors" },
+        { label: "Cheerleaders", href: "/services/cheerleaders" },
+        { label: "Supervisor", href: "/services/supervisor" },
+        { label: "Runner", href: "/services/runner" },
+        { label: "Support Services", href: "/services/support-services" }
       ]
     },
     { label: "New Updates", href: "/new-updates" },
