@@ -217,7 +217,7 @@ function Services() {
                 <div className="mb-4">
                   <label htmlFor="description" className="block text-gray-700 text-sm font-bold mb-2">Description</label>
                   <Editor
-                    apiKey="x9a4egxagzznzb23hj6pp1lybzr6vtorb1k2rctclv93w5ce"
+                    apiKey="cm9nvfslzhkydmi4aepyvc9o19x9cytyzde015wkqbusa3p8"
                     value={updatedFormData.description}
                     onEditorChange={(value) => setUpdatedFormData({ ...updatedFormData, description: value })}
                     init={{

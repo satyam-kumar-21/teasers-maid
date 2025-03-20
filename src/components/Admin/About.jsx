@@ -121,7 +121,7 @@ function About() {
                         Description 1
                       </label>
                       <Editor
-                        apiKey="your-tinymce-api-key" // Get your own TinyMCE API key
+                        apiKey="cm9nvfslzhkydmi4aepyvc9o19x9cytyzde015wkqbusa3p8" // Get your own TinyMCE API key
                         value={formData.description1}
                         onEditorChange={(value) => setFormData({ ...formData, description1: value })}
                         init={{
@@ -144,7 +144,7 @@ function About() {
                         Description 2
                       </label>
                       <Editor
-                        apiKey="your-tinymce-api-key" // Get your own TinyMCE API key
+                        apiKey="cm9nvfslzhkydmi4aepyvc9o19x9cytyzde015wkqbusa3p8" // Get your own TinyMCE API key
                         value={formData.description2}
                         onEditorChange={(value) => setFormData({ ...formData, description2: value })}
                         init={{

@@ -15,18 +15,18 @@ import { TeaserHosts } from "@/components/TeaserHosts";
 const cards = [
   {
     img: Img1,
-    title: "Search Tearsheets by Category",
-    description: "Browse and find the perfect tearsheets categorized by type and interest.",
+    title: "Search Teasers by Category",
+    description: "Browse and find the perfect Teasers categorized by type and interest.",
   },
   {
     img: Img2,
-    title: "Schedule a Tearsheet Appointment",
-    description: "Book a session with your preferred tearsheet expert and schedule your appointment.",
+    title: "Schedule a Teasers Appointment",
+    description: "Book a session with your preferred Teasers expert and schedule your appointment.",
   },
   {
     img: Img3,
-    title: "Achieve Your Goals with Tearsheets",
-    description: "Unlock new insights and achieve your personal or professional goals through custom-designed tearsheets.",
+    title: "Achieve Your Goals with Teasers",
+    description: "Unlock new insights and achieve your personal or professional goals through custom-designed Teasers.",
   },
   {
     img: Img4,
@@ -52,10 +52,10 @@ export default function IndexPage() {
           className="bg-[#FFE0CE] w-full rounded-2xl px-10 py-16 dark:bg-[#1A202C]"
         >
           <h1 className="font-semibold text-3xl">
-            Discover and Book Your Perfect Tearsheet Today
+            Discover and Book Your Perfect Teasers Today
           </h1>
           <p className="mt-4">
-            Find the perfect tearsheet session to help you gain new insights, solve challenges, and take the next step in your journey.
+            Find the perfect Teasers session to help you gain new insights, solve challenges, and take the next step in your journey.
             <br /> Let us help you achieve your personal or professional goals with our tailored tearsheet services.
           </p>
           <Button

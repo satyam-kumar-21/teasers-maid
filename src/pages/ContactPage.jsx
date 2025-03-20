@@ -56,14 +56,14 @@ const Contact = () => {
               </h3>
               <div className="flex items-center space-x-4 mb-4">
                 <PhoneIcon className="h-6 w-6 text-pink-500 dark:text-white" />
-                <span className="text-gray-700 dark:text-white">Phone: (+91) 7290021461</span>
+                <span className="text-gray-700 dark:text-white">Phone: (+91) 9911555433</span>
               </div>
               <div className="flex items-center space-x-4 mb-4">
                 <MailIcon className="h-6 w-6 text-pink-500 dark:text-white" />
                 <span className="text-gray-700 dark:text-white">Email: selectmaid@gmail.com</span>
               </div>
               <div className="flex items-center space-x-4">
-                <a href="https://wa.me/+917290021461" target="_blank" rel="noopener noreferrer" className="text-pink-500 dark:text-white hover:text-pink-400">
+                <a href="https://wa.me/+919911555433" target="_blank" rel="noopener noreferrer" className="text-pink-500 dark:text-white hover:text-pink-400">
                   <ExternalLinkIcon className="h-6 w-6" />
                   <span className="ml-2">WhatsApp Us</span>
                 </a>

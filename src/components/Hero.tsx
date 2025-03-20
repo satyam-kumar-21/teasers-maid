@@ -3,12 +3,6 @@ import { motion, useAnimation, useInView } from "framer-motion";
 import { FaArrowRight } from "react-icons/fa6";
 import { Button } from "@heroui/react";
 
-
-
-
-
-
-
 export const Hero: React.FC = () => {
   const ref = useRef<HTMLElement>(null);
   const isInView = useInView(ref, { once: false });
@@ -124,7 +118,7 @@ export const Hero: React.FC = () => {
                 className="bg-[#ffceb2] dark:bg-[#FACC15] text-black"
                 size="lg"
                 radius="full"
-                onClick={() => window.open("https://wa.me/916203176139", "_blank")} // WhatsApp link with provided number
+                onClick={() => window.open("https://wa.me/919911555433", "_blank")} // WhatsApp link with provided number
               >
                 Book a Teaser <FaArrowRight className="h-4 w-4 text-black" />
               </Button>

@@ -16,7 +16,7 @@ const AdminLogin = () => {
       const response = await axios.post(`${apiUrl}/admin/login`, { username, password });
       if (response.data.success) {
         localStorage.setItem('isAuthenticated', 'true');
-        navigate('/admin/');
+        navigate('/admin44/');
         
       } else {
         alert('Invalid credentials');

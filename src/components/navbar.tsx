@@ -58,9 +58,8 @@ export const Navbar = () => {
             <img
               src={logo}
               alt="Teasers Logo"
-              className="h-12 w-auto sm:h-16 md:h-20 lg:h-24 xl:h-32"
+              className="h-12 w-auto sm:h-16 md:h-15 lg:h-15 xl:h-15"
             /> {/* Adjust size as needed */}
-            {/* <p className="font-bold text-inherit">Teasers</p> */}
           </Link>
         </NavbarBrand>
         <div className="hidden lg:flex gap-4 justify-start ml-2">
@@ -153,7 +152,7 @@ export const Navbar = () => {
             >
               <div
                 onClick={item.dropdown ? toggleDropdown : undefined}
-                className="flex items-center"
+                className="flex items-center cursor-pointer" // Ensuring clickability
               >
                 <Link
                   className={clsx(
@@ -177,17 +176,17 @@ export const Navbar = () => {
                   />
                 )}
               </div>
-              {/* Conditionally render the dropdown menu */}
+              {/* Conditionally render the dropdown menu inline in navbar */}
               {item.dropdown && isDropdownOpen && (
                 <div
                   ref={dropdownRef}
-                  className="absolute left-0 mt-2 w-48 bg-white z-20 shadow-lg rounded-lg"
+                  className="mt-2 w-full bg-transparent z-10" // Removed background for mobile
                 >
                   <ul className="flex flex-col">
                     {item.dropdown.map((dropdownItem) => (
                       <li key={dropdownItem.href}>
                         <Link
-                          className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                          className="block px-4 py-2 text-sm text-black dark:text-white hover:bg-gray-100"
                           href={dropdownItem.href}
                         >
                           {dropdownItem.label}

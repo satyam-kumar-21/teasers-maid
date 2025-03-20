@@ -127,12 +127,7 @@ const NewUpdate = () => {
           animate="visible"
           variants={textVariants}
         >
-          <a
-            href="/book-now"
-            className="text-white bg-blue-600 hover:bg-blue-700 font-semibold py-4 px-8 rounded-lg transition duration-300 ease-in-out"
-          >
-            Book Your Experience Now
-          </a>
+          
         </motion.div>
       </section>
     </DefaultLayout>

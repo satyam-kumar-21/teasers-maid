@@ -7,7 +7,7 @@ const AdminSidebar = () => {
 
   const handleLogout = () => {
     localStorage.removeItem('isAuthenticated');
-    navigate('/admin/login');
+    navigate('/admin44/login');
   };
 
   return (
