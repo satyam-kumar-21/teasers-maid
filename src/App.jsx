@@ -75,8 +75,8 @@ function App() {
 
         {/* <Route element={<Adminsidenav />} path="/admin" />
         <Route element={<AdminAbout />} path="/admin/about" /> */}
-        <Route path="/admin44/" element={<Admin />} />
-        <Route path="/admin44/login" element={<AdminLogin />} />
+        <Route path="/admin33/" element={<Admin />} />
+        <Route path="/admin33/login" element={<AdminLogin />} />
         <Route path="/admin/dashboard" element={<PrivateRoute><AdminDashboard /></PrivateRoute>} />
         <Route path="/admin/about" element={<PrivateRoute><About /></PrivateRoute>} />
         <Route path="/admin/new-updates" element={<PrivateRoute><NewUpdates /></PrivateRoute>} />
