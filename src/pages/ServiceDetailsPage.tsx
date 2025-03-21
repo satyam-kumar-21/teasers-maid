@@ -65,7 +65,7 @@ const ServiceDetails = () => {
     <section className="dark:text-white bg-white dark:bg-gray-900 py-16 px-4 text-center">
       <div className="max-w-4xl mx-auto space-y-8">
         {/* Heading */}
-        <h2 className="text-4xl font-semibold text-gray-800 dark:text-yellow-400 mb-6">
+        <h2 className="text-4xl font-semibold text-pink-600 dark:text-yellow-400 mb-6">
           {service.heading}
         </h2>
 

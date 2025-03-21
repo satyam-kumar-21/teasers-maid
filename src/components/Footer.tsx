@@ -12,7 +12,7 @@ export const Footer: React.FC = () => {
                   className="mr-3 h-8"
                   alt="FlowBite Logo"
                 /> */}
-              <span className="self-center text-2xl text-gray-900 font-semibold whitespace-nowrap dark:text-white">
+              <span className="self-center text-2xl text-pink-600 font-semibold whitespace-nowrap dark:text-white">
                 Teasers
               </span>
             </Link>

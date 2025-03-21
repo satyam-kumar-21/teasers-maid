@@ -36,7 +36,7 @@ export const Achievements: React.FC = () => {
   }, []);
 
   return (
-    <section className="h-auto py-10 mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 w-full dark:bg-[#0a0b0d] bg-[#FFF7F0] dark:text-white md:px-16 px-4">
+    <section className="h-auto text-pink-600 py-10 mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 w-full dark:bg-[#0a0b0d] bg-[#FFF7F0] dark:text-white md:px-16 px-4">
       {cards.map((card, index) => (
         <div
           key={index}
@@ -48,7 +48,7 @@ export const Achievements: React.FC = () => {
             <img src={card.img} alt="icon" />
           </div>
           <h1 className="font-bold text-2xl sm:text-3xl">{card.title}</h1>
-          <p className="mt-4 text-base sm:text-lg font-semibold text-gray-600 text-center">
+          <p className="mt-4 text-base sm:text-lg font-semibold text-pink-600 text-center">
             {card.desc}
           </p>
         </div>

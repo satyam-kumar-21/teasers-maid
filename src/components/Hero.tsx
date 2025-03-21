@@ -74,7 +74,7 @@ export const Hero: React.FC = () => {
         >
           <div className="max-w-[1320px] mx-auto">
             <motion.h2
-              className="text-4xl md:text-6xl font-bold dark:text-yellow-400 mb-6"
+              className="text-4xl md:text-6xl text-pink-600 font-bold dark:text-yellow-400 mb-6"
               initial="hidden"
               animate={mainControls}
               variants={headingVariants}
@@ -115,7 +115,7 @@ export const Hero: React.FC = () => {
             >
               {/* Modified the button to link to WhatsApp */}
               <Button
-                className="bg-[#ffceb2] dark:bg-[#FACC15] text-black"
+                className="bg-[#ffceb2] text-pink-600 dark:bg-[#FACC15] "
                 size="lg"
                 radius="full"
                 onClick={() => window.open("https://wa.me/919911555433", "_blank")} // WhatsApp link with provided number

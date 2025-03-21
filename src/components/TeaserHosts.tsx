@@ -26,7 +26,7 @@ export const TeaserHosts: React.FC = () => {
 
   return (
     <section className="h-auto mt-16 md:px-16 px-4 w-full">
-      <h1 className="font-semibold text-3xl dark:text-white">
+      <h1 className="font-semibold text-pink-600 text-3xl dark:text-white">
         Our Top Teaser Hosts
       </h1>
 

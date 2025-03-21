@@ -49,9 +49,9 @@ export default function IndexPage() {
       <div className="h-auto mt-16 w-full grid grid-cols-1 md:grid-cols-2 gap-8 md:px-16 px-4">
         <div
           data-aos="fade-up"
-          className="bg-[#FFE0CE] w-full rounded-2xl px-10 py-16 dark:bg-[#1A202C]"
+          className="bg-[#FFE0CE] w-full  rounded-2xl px-10 py-16 dark:bg-[#1A202C]"
         >
-          <h1 className="font-semibold text-3xl">
+          <h1 className="font-semibold dark:text-yellow-400 text-pink-600 text-3xl">
             Discover and Book Your Perfect Teasers Today
           </h1>
           <p className="mt-4">
@@ -59,7 +59,7 @@ export default function IndexPage() {
             <br /> Let us help you achieve your personal or professional goals with our tailored tearsheet services.
           </p>
           <Button
-            className="mt-8 bg-black text-white dark:bg-white dark:text-black"
+            className="mt-8 bg-black text-pink-600 dark:bg-white dark:text-black"
             size="lg"
           >
             Get Started
@@ -73,7 +73,7 @@ export default function IndexPage() {
           {cards.map((card, index) => (
             <div
               key={index}
-              className="px-8 md:py-0 py-8 h-full flex flex-col justify-center rounded-xl bg-[#FBEEE6] dark:bg-[#2D3748]"
+              className="px-8 md:py-0 dark:text-yellow-400 text-pink-600 py-8 h-full flex flex-col justify-center rounded-xl bg-[#FBEEE6] dark:bg-[#2D3748]"
             >
               <img src={card.img} width={25} className="mx-auto" alt={card.title} />
               <h1 className="font-bold text-2xl mt-4 md:text-start text-center">

@@ -33,9 +33,9 @@ const Services = () => {
   };
 
   return (
-    <section className="dark:text-white bg-white dark:bg-gray-900 py-16 px-4 text-center">
+    <section className="dark:text-white text-pink-600 bg-white dark:bg-gray-900 py-16 px-4 text-center">
       <motion.div className="max-w-6xl mx-auto mb-12">
-        <motion.h2 className="text-3xl sm:text-4xl font-bold text-gray-800 dark:text-yellow-400 mb-6">
+        <motion.h2 className="text-3xl sm:text-4xl font-bold text-pink-600 dark:text-yellow-400 mb-6">
           Our Services
         </motion.h2>
         <motion.p className="text-lg sm:text-xl md:text-2xl font-light text-gray-600 dark:text-gray-300 mb-8">

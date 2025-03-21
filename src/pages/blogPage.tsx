@@ -17,7 +17,7 @@ export default function BlogPage() {
 
   return (
     <DefaultLayout>
-      <section className="dark:bg-[#0a0b0d] bg-[#FFF7F0] dark:text-white text-gray-800 h-auto py-10 relative md:px-12 px-4">
+      <section className="dark:bg-[#0a0b0d] bg-[#FFF7F0] dark:text-white text-pink-600 h-auto py-10 relative md:px-12 px-4">
         <h1 className="text-3xl font-bold text-center mb-6">Blog</h1>
 
         {/* Blog Teasers */}

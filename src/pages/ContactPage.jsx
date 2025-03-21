@@ -37,21 +37,21 @@ const Contact = () => {
   return (
 
     
-    <section id='contact' className="bg-white dark:bg-gray-800 py-16">
+    <section id='contact' className="bg-white text-pink-600 dark:bg-gray-800 py-16">
       <div className="container mx-auto px-6">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl font-bold text-gray-800 dark:text-white mb-8 text-center">
+          <h2 className="text-4xl font-bold text-pink-600 dark:text-white mb-8 text-center">
             Contact Us
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="bg-gray-100 dark:bg-gray-700 p-6 rounded-lg shadow-md">
-              <h3 className="text-2xl font-semibold text-gray-800 dark:text-white mb-4">
+              <h3 className="text-2xl font-semibold text-pink-600 dark:text-white mb-4">
                 Address
               </h3>
               <p className="text-gray-700 dark:text-white mb-4">
                 Teasers, 258, First Floor, Hari Nagar Ashram, Mathura Road, New Delhi 110014
               </p>
-              <h3 className="text-2xl font-semibold text-gray-800 dark:text-white mb-4">
+              <h3 className="text-2xl font-semibold text-pink-600 dark:text-white mb-4">
                 Contact Information
               </h3>
               <div className="flex items-center space-x-4 mb-4">
@@ -70,7 +70,7 @@ const Contact = () => {
               </div>
             </div>
             <div className="bg-gray-100 dark:bg-gray-700 p-6 rounded-lg shadow-md">
-              <h3 className="text-2xl font-semibold text-gray-800 dark:text-white mb-4">
+              <h3 className="text-2xl font-semibold text-pink-600 dark:text-white mb-4">
                 Send Us a Message
               </h3>
               <form onSubmit={handleSubmit}>

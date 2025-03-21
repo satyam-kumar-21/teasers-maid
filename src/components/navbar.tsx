@@ -25,12 +25,16 @@ export const Navbar = () => {
     setIsDropdownOpen(!isDropdownOpen);
   };
 
+  
+
   // Close the dropdown when clicking anywhere outside the dropdown
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (
         dropdownRef.current &&
         !dropdownRef.current.contains(event.target as Node)
+
+        
       ) {
         setIsDropdownOpen(false);
       }
@@ -59,7 +63,7 @@ export const Navbar = () => {
               src={logo}
               alt="Teasers Logo"
               className="h-12 w-auto sm:h-16 md:h-15 lg:h-15 xl:h-15"
-            /> {/* Adjust size as needed */}
+            />
           </Link>
         </NavbarBrand>
         <div className="hidden lg:flex gap-4 justify-start ml-2">
@@ -68,10 +72,8 @@ export const Navbar = () => {
               key={item.href}
               className={item.dropdown ? "relative" : ""}
             >
-              <div
-                onClick={item.dropdown ? toggleDropdown : undefined}
-                className="flex items-center"
-              >
+              <div className="flex items-center cursor-pointer">
+                {/* Add onClick to the link text as well */}
                 <Link
                   className={clsx(
                     linkStyles({ color: "foreground" }),
@@ -79,6 +81,7 @@ export const Navbar = () => {
                   )}
                   color="foreground"
                   href={item.href}
+                  onClick={item.dropdown ? toggleDropdown : undefined} // Toggle dropdown on label click
                 >
                   {item.label}
                 </Link>
@@ -150,10 +153,7 @@ export const Navbar = () => {
               key={item.href}
               className={item.dropdown ? "relative" : ""}
             >
-              <div
-                onClick={item.dropdown ? toggleDropdown : undefined}
-                className="flex items-center cursor-pointer" // Ensuring clickability
-              >
+              <div className="flex items-center cursor-pointer">
                 <Link
                   className={clsx(
                     linkStyles({ color: "foreground" }),
@@ -161,6 +161,7 @@ export const Navbar = () => {
                   )}
                   color="foreground"
                   href={item.href}
+                  onClick={item.dropdown ? toggleDropdown : undefined} // Toggle dropdown on label click
                 >
                   {item.label}
                 </Link>
@@ -181,11 +182,12 @@ export const Navbar = () => {
                 <div
                   ref={dropdownRef}
                   className="mt-2 w-full bg-transparent z-10" // Removed background for mobile
-                >
-                  <ul className="flex flex-col">
+                > 
+                  <ul className="flex flex-col" >
                     {item.dropdown.map((dropdownItem) => (
                       <li key={dropdownItem.href}>
                         <Link
+                        
                           className="block px-4 py-2 text-sm text-black dark:text-white hover:bg-gray-100"
                           href={dropdownItem.href}
                         >

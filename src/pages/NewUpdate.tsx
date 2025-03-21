@@ -65,7 +65,7 @@ const NewUpdate = () => {
           variants={headingVariants}
         >
           <motion.h2
-            className="text-4xl sm:text-5xl font-bold text-gray-800 dark:text-white mb-6"
+            className="text-4xl sm:text-5xl font-bold text-pink-600 dark:text-white mb-6"
             variants={wordVariants}
           >
             A Special Message from the Owner
@@ -109,7 +109,7 @@ const NewUpdate = () => {
                 className="w-full h-64 object-cover transition-transform duration-300 ease-in-out group-hover:scale-110"
               />
               <div className="p-6">
-                <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
+                <h3 className="text-xl font-semibold text-pink-600 dark:text-white">
                   {update.heading} {/* Dynamic heading from Redux state */}
                 </h3>
                 <p className="mt-4 text-gray-600 dark:text-gray-300">

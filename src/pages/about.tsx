@@ -67,7 +67,7 @@ const About = () => {
     <DefaultLayout>
       <section
         ref={sectionRef}  // <-- Use sectionRef here
-        className="dark:text-white bg-white dark:bg-gray-900 py-16 px-4 text-center"
+        className="dark:text-white bg-white text-pink-600 dark:bg-gray-900 py-16 px-4 text-center"
       >
         {/* Hero Section with Message */}
         <motion.div
@@ -77,7 +77,7 @@ const About = () => {
           variants={headingVariants}
         >
           <motion.h2
-            className="text-3xl sm:text-4xl font-bold text-gray-800 dark:text-yellow-400 mb-6"
+            className="text-3xl sm:text-4xl font-bold text-pink-600 dark:text-yellow-400 mb-6"
             variants={wordVariants}
           >
             About Us
@@ -103,7 +103,7 @@ const About = () => {
       </section>
 
       <div className="mb-12">
-        <h3 className="text-2xl text-center font-semibold mb-8">Explore Upcoming Teasers</h3>
+        <h3 className="text-2xl text-center text-pink-600 dark:text-yellow-400 font-semibold mb-8">Explore Upcoming Teasers</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:px-16 px-4">
           <div className="col-span-1 md:col-span-2 rounded-xl overflow-hidden">
             <img

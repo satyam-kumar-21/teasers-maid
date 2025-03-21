@@ -1,11 +1,11 @@
 function VisionMission() {
   return (
-    <div className="py-16 px-4 text-center bg-white dark:bg-gray-900">
+    <div className="py-16 px-4 text-pink-600 text-center bg-white dark:bg-gray-900">
       <div className="max-w-6xl mx-auto space-y-12">
 
         {/* Mission Section */}
         <section>
-          <h2 className="text-4xl sm:text-5xl font-bold text-gray-800 dark:text-yellow-400 mb-6">
+          <h2 className="text-4xl sm:text-5xl font-bold text-pink-600 dark:text-yellow-400 mb-6">
             Our Mission
           </h2>
           <div className="relative mb-8">
@@ -27,7 +27,7 @@ function VisionMission() {
 
          {/* Vision Section */}
          <section>
-          <h2 className="text-4xl sm:text-5xl font-bold text-gray-800 dark:text-yellow-400 mb-6">
+          <h2 className="text-4xl sm:text-5xl font-bold text-pink-600 dark:text-yellow-400 mb-6">
             Our Vision
           </h2>
           <div className="relative mb-8">
