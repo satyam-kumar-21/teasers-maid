@@ -1,3 +1,5 @@
+
+
 function VisionMission() {
   return (
     <div className="py-16 px-4 text-pink-600 text-center bg-white dark:bg-gray-900">
@@ -18,15 +20,36 @@ function VisionMission() {
               Empowering Transformation through Expertise
             </p>
           </div>
-          <p className="text-lg sm:text-xl md:text-2xl font-light text-gray-600 dark:text-gray-300">
-            At the heart of our mission is a deep commitment to helping individuals and organizations overcome their toughest challenges.
-            We craft personalized tearsheet sessions that provide actionable insights and strategies needed to drive success. 
-            We aim to make a tangible impact on every client we serve, guiding them toward their goals with clarity, precision, and purpose.
+          <p className="text-lg sm:text-xl md:text-2xl font-light text-gray-600 dark:text-gray-300 mb-8">
+            Our mission is to deliver exceptional event staffing services featuring "teasers" with dynamic personalities, who enhance every occasion—whether modeling, parties, corporate functions, or individual events—with their charm, professionalism, and ability to create unforgettable experiences.
           </p>
+          <ul className="list-disc list-inside text-lg sm:text-xl md:text-2xl font-light text-gray-600 dark:text-gray-300 space-y-4">
+            <li>"To deliver unforgettable event experiences by providing staffing with 'teasers' who bring charm, energy, and professionalism to every interaction, ensuring our clients' events are a success."</li>
+            <li>"Igniting events with personality: Our 'teaser' staffing services combine beauty, charm, and professionalism to create lasting impressions at every occasion."</li>
+            <li>"Empowering our clients to host exceptional events with our 'teaser' staff, who captivate audiences and ensure every moment is memorable."</li>
+            <li>"To ignite curiosity and passion through playful teasing and bold creativity, creating connections that are as electrifying as they are unexpected."</li>
+            <li>"We are dedicated to sparking joy and excitement, using our sizzling personality to tease the world into discovering its own spark."</li>
+            <li>"To tease the world into discovering its own spark, through playful interaction and sizzling personalities."</li>
+          </ul>
         </section>
 
-         {/* Vision Section */}
-         <section>
+        {/* Key Facts Section */}
+        <section>
+          <h2 className="text-4xl sm:text-5xl font-bold text-pink-600 dark:text-yellow-400 mb-6">
+            Key Facts
+          </h2>
+          <ul className="list-disc list-inside text-lg sm:text-xl md:text-2xl font-light text-gray-600 dark:text-gray-300 space-y-4">
+            <li>"To deliver unforgettable event experiences by providing staffing with 'teasers' who bring charm, energy, and professionalism to every interaction, ensuring our clients' events are a success."</li>
+            <li>"Igniting events with personality: Our 'teaser' staffing services combine beauty, charm, and professionalism to create lasting impressions at every occasion."</li>
+            <li>"Empowering our clients to host exceptional events with our 'teaser' staff, who captivate audiences and ensure every moment is memorable."</li>
+            <li>"To ignite curiosity and passion through playful teasing and bold creativity, creating connections that are as electrifying as they are unexpected."</li>
+            <li>"We are dedicated to sparking joy and excitement, using our sizzling personality to tease the world into discovering its own spark."</li>
+            <li>"To tease the world into discovering its own spark, through playful interaction and sizzling personalities."</li>
+          </ul>
+        </section>
+
+        {/* Vision Section */}
+        <section>
           <h2 className="text-4xl sm:text-5xl font-bold text-pink-600 dark:text-yellow-400 mb-6">
             Our Vision
           </h2>
@@ -40,11 +63,23 @@ function VisionMission() {
               Leading with Purpose and Insight
             </p>
           </div>
-          <p className="text-lg sm:text-xl md:text-2xl font-light text-gray-600 dark:text-gray-300">
-            Our vision is to become a beacon of insight and guidance for individuals and organizations seeking meaningful progress. 
-            We strive to be recognized for our ability to create lasting change, empowering others through knowledge, strategy, and tailored action plans.
-            By continuously innovating and evolving, we aim to create a future where anyone can unlock their full potential, regardless of their starting point.
+          <p className="text-lg sm:text-xl md:text-2xl font-light text-gray-600 dark:text-gray-300 mb-8">
+            "To redefine event staffing through our 'Teasers,' who bring sizzle and substance to every occasion, making us the premier choice for elevating parties, corporate events, modeling, branding, promotion, and individual engagements with unforgettable experiences."
           </p>
+          <ul className="list-disc list-inside text-lg sm:text-xl md:text-2xl font-light text-gray-600 dark:text-gray-300 space-y-4">
+            <li>"To be the leading provider of exceptional female talent for events, setting the standard for excellence, professionalism, and client satisfaction in the industry."</li>
+            <li>"To redefine event staffing with our 'Teasers,' delivering unparalleled charm and professionalism to elevate every event."</li>
+            <li>"To lead the event staffing industry by providing 'Teasers' who bring vibrancy and professionalism to every occasion, creating lasting impressions and ensuring client success."</li>
+          </ul>
+          <p className="text-lg sm:text-xl md:text-2xl font-light text-gray-600 dark:text-gray-300 mt-8">
+            Our Vision emphasizes:
+          </p>
+          <ul className="list-inside text-lg sm:text-xl md:text-2xl font-light text-gray-600 dark:text-gray-300 space-y-4">
+            <li>Leadership: "Redefine event staffing" and "premier choice" position us as innovators and leaders in the industry.</li>
+            <li>Unique Value Proposition: "Sizzle and substance" captures the engaging personalities ("sizzle") and professional expertise ("substance") of our "Teasers."</li>
+            <li>Versatility: "Every occasion" implies coverage of all event types, from parties to individual engagements.</li>
+            <li>Client Focus: "Unforgettable experiences" highlights our goal of creating memorable events for clients and attendees.</li>
+          </ul>
         </section>
 
       </div>

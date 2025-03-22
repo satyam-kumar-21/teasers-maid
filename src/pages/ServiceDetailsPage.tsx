@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom"; // To get the id from the URL
 import { useSelector } from "react-redux"; // Assuming you're using Redux
 import { TeaserHosts } from "@/components/TeaserHosts";
-import VisionMission from "@/components/VissionMission";
 
 // Service details component
 const ServiceDetails = () => {
@@ -61,6 +60,11 @@ const ServiceDetails = () => {
     ); // If no matching service is found
   }
 
+  // Filter out the current service from the list of services to display other services
+  const otherServices = services?.filter((item: { heading: string | number }) => {
+    return item.heading?.toString().toLowerCase() !== service.heading?.toString().toLowerCase();
+  });
+
   return (
     <section className="dark:text-white bg-white dark:bg-gray-900 py-16 px-4 text-center">
       <div className="max-w-4xl mx-auto space-y-8">
@@ -94,8 +98,41 @@ const ServiceDetails = () => {
             Contact us on WhatsApp
           </a>
         </div>
+
+        {/* Other Services Section */}
+        <div className="mt-12">
+          <h3 className="text-3xl font-semibold text-pink-600 dark:text-yellow-400 mb-6">
+            Other Services You Might Like
+          </h3>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+            {otherServices?.map((otherService: any) => (
+              <div key={otherService.id} className="overflow-hidden rounded-lg shadow-lg">
+                <img
+                  className="w-full h-48 object-cover"
+                  src={otherService.image}
+                  alt={otherService.heading}
+                />
+                <div className="p-4">
+                  <h4 className="text-xl font-semibold text-pink-600  dark:text-yellow-400 mb-2">
+                    {otherService.heading}
+                  </h4>
+                  <p className="text-gray-600 mb-2" dangerouslySetInnerHTML={{ __html: otherService.description.slice(0, 100) + '...' }}></p>
+
+
+                  <a
+                    href={`/service/${otherService.heading?.toString().toLowerCase().replace(/ /g, "-")}`}
+                    className="text-blue-600 hover:text-blue-800 font-semibold"
+                  >
+                    Learn More
+                  </a>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
-      <VisionMission />
+
+      {/* TeaserHosts Section */}
       <TeaserHosts />
     </section>
   );

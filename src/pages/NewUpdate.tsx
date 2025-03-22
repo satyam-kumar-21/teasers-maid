@@ -65,7 +65,7 @@ const NewUpdate = () => {
           variants={headingVariants}
         >
           <motion.h2
-            className="text-4xl sm:text-5xl font-bold text-pink-600 dark:text-white mb-6"
+            className="text-4xl sm:text-5xl font-bold text-pink-600 dark:text-yellow-400 mb-6"
             variants={wordVariants}
           >
             A Special Message from the Owner
@@ -75,14 +75,14 @@ const NewUpdate = () => {
             variants={wordVariants}
             style={{ transform: `translateY(${scrollY * 0.05}px)` }}
           >
-            Hello, and welcome to our platform! As the owner, I wanted to take a moment to personally thank you for being part of our community. We're committed to providing you with the best possible experiences, whether you're booking for a dinner date, a coffee hangout, or a private party. Your satisfaction and enjoyment are our top priority!
+            Hello, and welcome to our platform! As the owner, I wanted to take a moment to personally thank you for being part of our community. We're committed to providing you with the best possible experiences, Whether You are Booking a Teasers for Brand Model, Auto Expo, Trade Shows, Exhibition, Events, Festivals, Social Events, Sports Events, Red Carpet, VIP Events, Wedding Events, Brand Promotion, Small Promotions, Canopy Activities, Road Shows, Rural Campaigns, Marketing Campaigns,  Airport Marketing, RWA Activities, Corporate Activities, Ad Campaigns, Print Modeling, Ramp Shows, Liquor/Cigarette Promotion, School Contact Programs, e-Commerce Shoots, Auditions, Concerts, Conference,  a Coffee Party, a Private Party. Your Satisfaction Our Top Priority.
           </motion.p>
           <motion.p
             className="text-lg sm:text-xl md:text-2xl font-light text-gray-600 dark:text-gray-300 mb-10"
             variants={wordVariants}
             style={{ transform: `translateY(${scrollY * 0.05}px)` }}
           >
-            We are continuously working to improve and expand our offerings, ensuring that you always have access to exciting new teasers and experiences. Stay tuned for upcoming updates, special offers, and unique content tailored to your needs!
+            We are continuously working to improve and expand our offerings, ensuring that you always have access to exciting new teasers and experiences. Stay tuned for upcoming updates, special offers, and unique content tailored to your needs.
           </motion.p>
           <motion.p
             className="text-lg sm:text-xl md:text-2xl font-light text-gray-600 dark:text-gray-300 mb-10"

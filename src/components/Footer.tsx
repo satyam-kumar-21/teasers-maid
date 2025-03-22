@@ -6,7 +6,7 @@ export const Footer: React.FC = () => {
       <div className="mx-auto max-w-screen-xl">
         <div className="md:flex md:justify-between">
           <div className="mb-6 md:mb-0">
-            <Link href="#" className="flex items-center">
+            <Link href="/" className="flex items-center">
               {/* <img
                   src="https://flowbite.com/docs/images/logo.svg"
                   className="mr-3 h-8"
@@ -25,7 +25,7 @@ export const Footer: React.FC = () => {
               <ul>
                 <li className="mb-4">
                   <Link
-                    href="#"
+                    href="/about"
                     className="hover:underline text-gray-600 dark:text-gray-400"
                   >
                     About
@@ -70,20 +70,20 @@ export const Footer: React.FC = () => {
               </h2>
               <ul>
                 <li className="mb-4">
-                  <a
-                    href="#"
+                  <Link
+                    href="/privacy-policy"
                     className="hover:underline text-gray-600 dark:text-gray-400"
                   >
                     Privacy Policy
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
-                    href="#"
+                  <Link
+                    href="/terms-conditions"
                     className="hover:underline text-gray-600 dark:text-gray-400"
                   >
                     Terms &amp; Conditions
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>

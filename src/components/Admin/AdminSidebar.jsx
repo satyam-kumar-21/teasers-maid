@@ -17,42 +17,42 @@ const AdminSidebar = () => {
         <nav>
           <ul className="space-y-4">
             <li>
-              <Link to="/admin/about" className="bg-gray-700 hover:bg-gray-600 py-2 px-4 block rounded text-center transition duration-300">
+              <Link to="/admin33/about" className="bg-gray-700 hover:bg-gray-600 py-2 px-4 block rounded text-center transition duration-300">
                 About
               </Link>
             </li>
             <li>
-              <Link to="/admin/new-updates" className="bg-gray-700 hover:bg-gray-600 py-2 px-4 block rounded text-center transition duration-300">
+              <Link to="/admin33/new-updates" className="bg-gray-700 hover:bg-gray-600 py-2 px-4 block rounded text-center transition duration-300">
                 New Updates
               </Link>
             </li>
             <li>
-              <Link to="/admin/gallery" className="bg-gray-700 hover:bg-gray-600 py-2 px-4 block rounded text-center transition duration-300">
+              <Link to="/admin33/gallery" className="bg-gray-700 hover:bg-gray-600 py-2 px-4 block rounded text-center transition duration-300">
                 Gallery
               </Link>
             </li>
             <li>
-              <Link to="/admin/review" className="bg-gray-700 hover:bg-gray-600 py-2 px-4 block rounded text-center transition duration-300">
+              <Link to="/admin33/review" className="bg-gray-700 hover:bg-gray-600 py-2 px-4 block rounded text-center transition duration-300">
                 Review
               </Link>
             </li>
             <li>
-              <Link to="/admin/services" className="bg-gray-700 hover:bg-gray-600 py-2 px-4 block rounded text-center transition duration-300">
+              <Link to="/admin33/services" className="bg-gray-700 hover:bg-gray-600 py-2 px-4 block rounded text-center transition duration-300">
                 Services
               </Link>
             </li>
             <li>
-              <Link to="/admin/branches" className="bg-gray-700 hover:bg-gray-600 py-2 px-4 block rounded text-center transition duration-300">
+              <Link to="/admin33/branches" className="bg-gray-700 hover:bg-gray-600 py-2 px-4 block rounded text-center transition duration-300">
                 Branches
               </Link>
             </li>
             <li>
-              <Link to="/admin/blog" className="bg-gray-700 hover:bg-gray-600 py-2 px-4 block rounded text-center transition duration-300">
+              <Link to="/admin33/blog" className="bg-gray-700 hover:bg-gray-600 py-2 px-4 block rounded text-center transition duration-300">
                 Blogs
               </Link>
             </li>
             <li>
-              <Link to="/admin/top-teasers" className="bg-gray-700 hover:bg-gray-600 py-2 px-4 block rounded text-center transition duration-300">
+              <Link to="/admin33/top-teasers" className="bg-gray-700 hover:bg-gray-600 py-2 px-4 block rounded text-center transition duration-300">
                 Top Teasers
               </Link>
             </li>

@@ -60,7 +60,7 @@ const Contact = () => {
               </div>
               <div className="flex items-center space-x-4 mb-4">
                 <MailIcon className="h-6 w-6 text-pink-500 dark:text-white" />
-                <span className="text-gray-700 dark:text-white">Email: selectmaid@gmail.com</span>
+                <span className="text-gray-700 dark:text-white">Email: support@teasers.in</span>
               </div>
               <div className="flex items-center space-x-4">
                 <a href="https://wa.me/+919911555433" target="_blank" rel="noopener noreferrer" className="text-pink-500 dark:text-white hover:text-pink-400">
