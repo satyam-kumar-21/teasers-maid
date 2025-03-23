@@ -79,7 +79,7 @@ export const Hero: React.FC = () => {
               animate={mainControls}
               variants={headingVariants}
             >
-              {[ "Book", "Your", "Perfect", "Teaser", ".", "\n", "Dinners", "Coffee", "Parties", "and", "More!" ].map((word, index) =>
+              {[ "Book", "Your", `"Teasers"`, "For", "Modeling,", "Exhibition,", "Party", "and", "More..." ].map((word, index) => 
                 word === "\n" ? (
                   <br key={index} />
                 ) : (
@@ -104,7 +104,7 @@ export const Hero: React.FC = () => {
               variants={textVariants}
               style={{ transform: `translateY(${scrollY * 0.1}px)` }}
             >
-              Discover a variety of teasers for dinner dates, coffee hangouts, private parties, and more. Book your perfect teaser today!
+              Find Variety of Teasers for Exhibition, Show, Branding, Promotion, Party and More.
             </motion.p>
             <motion.div
               className="flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-4"
